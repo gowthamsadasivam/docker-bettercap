@@ -1,5 +1,15 @@
 FROM gliderlabs/alpine:3.3
 
+MAINTAINER Gowtham Sadasivam <http://gowthamsadasivam.me>
+
+LABEL Package="BetterCAP" \
+      Version="1.5.4" \
+      Description="BetterCAP the state of the art, modular, portable and easily extensible MITM framework in a Container" \
+      Destro="Alpine Linux 3.3" \
+      GitHub="https://github.com/gowthamsadasivam/docker-bettercap" \
+      DockerHub="https://hub.docker.com/r/gowthamsadasivam/docker-bettercap/" \
+      Maintainer="Gowtham Sadasivam"
+
 RUN apk add --no-cache --update \
     bash=4.3.42-r3 \
     build-base=0.4-r1 \

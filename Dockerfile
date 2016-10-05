@@ -3,7 +3,7 @@ FROM gliderlabs/alpine:3.3
 MAINTAINER Gowtham Sadasivam <http://gowthamsadasivam.me>
 
 LABEL Package="BetterCAP" \
-      Version="1.5.4" \
+      Version="1.5.8" \
       Description="BetterCAP the state of the art, modular, portable and easily extensible MITM framework in a Container" \
       Destro="Alpine Linux 3.3" \
       GitHub="https://github.com/gowthamsadasivam/docker-bettercap" \

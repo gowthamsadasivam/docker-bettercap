@@ -23,7 +23,7 @@ RUN apk add --no-cache --update \
     iptables-dev=1.4.21-r4 \
     && rm -rf /var/cache/apk/*
 
-RUN gem install bettercap -v 1.5.4
+RUN gem install bettercap
 
 EXPOSE 80 443 5300 8080 8081 8082 8083
 

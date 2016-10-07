@@ -10,6 +10,9 @@ LABEL Package="BetterCAP" \
       DockerHub="https://hub.docker.com/r/gowthamsadasivam/docker-bettercap/" \
       Maintainer="Gowtham Sadasivam"
 
+RUN apk add --update ca-certificates && \
+    rm -rf /var/cache/apk/* /tmp/*
+
 RUN apk add --no-cache --update \
     bash=4.3.42-r3 \
     build-base=0.4-r1 \
@@ -23,7 +26,8 @@ RUN apk add --no-cache --update \
     iptables-dev=1.4.21-r4 \
     && rm -rf /var/cache/apk/*
 
-RUN gem update --system --source http://rubygems.org/
+
+
 RUN gem install bettercap
 
 EXPOSE 80 443 5300 8080 8081 8082 8083

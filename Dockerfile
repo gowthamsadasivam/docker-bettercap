@@ -1,4 +1,4 @@
-FROM gliderlabs/alpine:3.3
+FROM gliderlabs/alpine:edge
 
 MAINTAINER Gowtham Sadasivam <http://gowthamsadasivam.me>
 

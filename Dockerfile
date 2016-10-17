@@ -3,12 +3,15 @@ FROM gliderlabs/alpine:3.3
 MAINTAINER Gowtham Sadasivam <http://gowthamsadasivam.me>
 
 LABEL Package="BetterCAP" \
-      Version="1.5.4" \
+      Version="1.5.8" \
       Description="BetterCAP the state of the art, modular, portable and easily extensible MITM framework in a Container" \
       Destro="Alpine Linux 3.3" \
       GitHub="https://github.com/gowthamsadasivam/docker-bettercap" \
       DockerHub="https://hub.docker.com/r/gowthamsadasivam/docker-bettercap/" \
       Maintainer="Gowtham Sadasivam"
+
+RUN apk add --update ca-certificates && \
+    rm -rf /var/cache/apk/* /tmp/*
 
 RUN apk add --no-cache --update \
     bash=4.3.42-r3 \
@@ -23,7 +26,9 @@ RUN apk add --no-cache --update \
     iptables-dev=1.4.21-r4 \
     && rm -rf /var/cache/apk/*
 
-RUN gem install bettercap -v 1.5.4
+
+
+RUN gem install bettercap
 
 EXPOSE 80 443 5300 8080 8081 8082 8083
 

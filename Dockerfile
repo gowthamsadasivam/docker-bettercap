@@ -1,31 +1,28 @@
-FROM gliderlabs/alpine:3.3
+FROM gliderlabs/alpine:latest
 
 MAINTAINER Gowtham Sadasivam <http://gowthamsadasivam.me>
 
 LABEL Package="BetterCAP" \
-      Version="1.5.8" \
+      Version="Latest-Stable" \
       Description="BetterCAP the state of the art, modular, portable and easily extensible MITM framework in a Container" \
-      Destro="Alpine Linux 3.3" \
+      Destro="Alpine Linux" \
       GitHub="https://github.com/gowthamsadasivam/docker-bettercap" \
       DockerHub="https://hub.docker.com/r/gowthamsadasivam/docker-bettercap/" \
       Maintainer="Gowtham Sadasivam"
 
 RUN apk add --update ca-certificates && \
+    apk add --no-cache --update \
+    bash \
+    build-base \
+    musl-dev \
+    ruby \
+    ruby-dev \
+    ruby-irb \
+    ruby-rdoc \
+    libcap-dev \
+    libpcap-dev \
+    iptables-dev && \
     rm -rf /var/cache/apk/* /tmp/*
-
-RUN apk add --no-cache --update \
-    bash=4.3.42-r3 \
-    build-base=0.4-r1 \
-    musl-dev=1.1.12-r5 \
-    ruby=2.2.4-r0 \
-    ruby-dev=2.2.4-r0 \
-    ruby-irb=2.2.4-r0 \
-    ruby-rdoc=2.2.4-r0 \
-    libcap-dev=2.24-r1 \
-    libpcap-dev=1.7.4-r0 \
-    iptables-dev=1.4.21-r4 \
-    && rm -rf /var/cache/apk/*
-
 
 
 RUN gem install bettercap

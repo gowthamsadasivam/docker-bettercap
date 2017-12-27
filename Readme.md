@@ -1,6 +1,6 @@
 ﻿# **BetterCAP**
 
-![BetterCap Logo](https://bettercap.org/assets/img/homepage-logo-border.png
+![BetterCap Logo](https://www.bettercap.org/assets/logo.png
  "")
 
 BetterCAP is a powerful, flexible and portable tool created to perform various types of MITM attacks against a network, manipulate HTTP, HTTPS and TCP traffic in real-time, sniff for credentials and much more.
@@ -17,24 +17,18 @@ Pull latest BetterCAP version of the image:
 $ docker pull gowthamsadasivam/docker-bettercap
 ```
 
-Pull a specific BetterCAP version of the image: (*ex. 1.5.4*)
-
-```sh
-$ docker pull gowthamsadasivam/docker-bettercap:1.5.4
-```
-
 # Example
 
 Access to all network interfaces of the *HOST* machine:
 
 ```sh
-$ docker run -it --privileged --net=host -p 8080:8080 gowthamsadasivam/docker-bettercap:1.5.4 -T 192.168.0.3 -I wlan0 --proxy -X --no-spoofing
+$ docker run -it --privileged --net=host -p 8080:8080 gowthamsadasivam/docker-bettercap -T 192.168.0.3 -I wlan0 --proxy -X --no-spoofing
 ```
 
 Access only within the *docker0* (bridged) interface:
 
 ```sh
-$ docker run -it -p 8080:8080 gowthamsadasivam/docker-bettercap:1.5.4 -T 172.17.0.3 --proxy -X --no-spoofing
+$ docker run -it -p 8080:8080 gowthamsadasivam/docker-bettercap -T 172.17.0.3 --proxy -X --no-spoofing
 ```
 
 # Usage & Options

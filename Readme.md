@@ -28,7 +28,7 @@ $ docker run -it --privileged --net=host -p 8080:8080 gowthamsadasivam/docker-be
 Access only within the *docker0* (bridged) interface:
 
 ```sh
-$ docker run -it -p 8080:8080 gowthamsadasivam/docker-bettercap -T 172.17.0.3 --proxy -X --no-spoofing
+$ docker run -it --privileged --net=host -p 8080:8080 gowthamsadasivam/docker-bettercap -T 172.17.0.3 --proxy -X --no-spoofing
 ```
 
 # Usage & Options
